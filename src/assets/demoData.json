@@ -1,0 +1,92 @@
+{
+    "userPrescription": [
+        {
+            "id": 1,
+            "Name": "Metoprolol Succinate 40 mg Tablets"
+        },
+        {
+            "id": 2,
+            "Name": "Metoprolol Succinate 100 mg Tablets"
+        },
+        {
+            "id": 3,
+            "Name": "Metoprolol Succinate 200 mg Tablets"
+        },
+        {
+            "id": 4,
+            "Name": "Amlodipine Tablets 20 mg"
+        },
+        {
+            "id": 5,
+            "Name": "Amlodipine Tablets 5 mg"
+        },
+        {
+            "id": 6,
+            "Name": "Amlodipine Tablets 10 mg"
+        },
+        {
+            "id": 7,
+            "Name": "Dolo 650 mg Tablets"
+        },
+        {
+            "id": 8,
+            "Name": "Dolo 500 mg Tablets"
+        },
+        {
+            "id": 9,
+            "Name": "Dolo Tablets"
+        }
+    ],
+    "userReports": [
+        {
+            "id": 1,
+            "Name": "Basic Metabolic Panel (BMP)"
+        },
+        {
+            "id": 2,
+            "Name": "Basic Metabolic Panel (BMP) Advance"
+        },
+        {
+            "id": 3,
+            "Name": "Basic Metabolic Panel (BMP) Basic"
+        },
+        {
+            "id": 4,
+            "Name": "Basic Metabolic Panel (BMP)"
+        },
+        {
+            "id": 5,
+            "Name": "Basic Metabolic Panel (BMP) Advance"
+        },
+        {
+            "id": 6,
+            "Name": "Basic Metabolic Panel (BMP) Basic"
+        }
+    ],
+    "otherReports": [
+        {
+            "id": 1,
+            "Name": "Physiotherapy"
+        },
+        {
+            "id": 2,
+            "Name": "Behavioral therapy"
+        },
+        {
+            "id": 3,
+            "Name": "Humanistic therapy"
+        },
+        {
+            "id": 4,
+            "Name": "Behavioral therapy"
+        },
+        {
+            "id": 5,
+            "Name": "Physiotherapy"
+        },
+        {
+            "id": 6,
+            "Name": "Humanistic therapy"
+        }
+    ]
+}
