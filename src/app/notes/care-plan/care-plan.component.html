@@ -1,1 +1,130 @@
-<p>care-plan works!</p>
+<div class="care-plan-main-div">
+    <div style="display: flex; flex-direction: row;gap:15px;">
+        <div style="flex: 50%">
+            <div *ngFor="let a of notesData">
+                <span class="status" *ngIf="a.status === 'Active'"> Active care plans</span>
+                <div  [ngClass]="{ selected: a === notesContent }" class="main-box" *ngIf="a.status === 'Active'"  (click)="notesDescription(a)">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="main-box-headings" style="flex: 33%">
+                        Plan
+                    </div>
+                    <div class="main-box-headings" style="flex: 33%">
+                        Created date
+                    </div>
+                    <div class="main-box-headings" style="flex: 33%">
+                        Validity
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.plan}}
+                    </div>
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.date}}
+                    </div>
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.validity}}
+                    </div>
+                </div>
+                </div>
+            
+                <span class="status" *ngIf="a.status === 'Inactive'">InActive care plans</span>
+                <div  [ngClass]="{ selected: a === notesContent }" class="main-box" *ngIf="a.status === 'Inactive'" (click)="notesDescription(a)">
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="main-box-headings" style="flex: 33%">
+                            Plan
+                        </div>
+                        <div class="main-box-headings" style="flex: 33%">
+                            Created date
+                        </div>
+                        <div class="main-box-headings" style="flex: 33%">
+                            Validity
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="main-box-values" style="flex: 33%">
+                            {{a.plan}}
+                        </div>
+                        <div class="main-box-values" style="flex: 33%">
+                            {{a.date}}
+                        </div>
+                        <div class="main-box-values" style="flex: 33%">
+                            {{a.validity}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div style="flex: 50%;" >
+            <span class="status">Care plan details</span>
+        <div class="main-box-two">
+            
+            <div style="display: flex; flex-direction: row;">
+                <div class="highlight-text" style="flex: 70%;">
+                    {{notesContent?.plan}}
+                </div>
+                <div style="display: flex; flex-direction: row;flex:30%;justify-content: end;gap: 12px;">
+                    <div class="status-box">{{notesContent.status}}</div>
+                </div>
+            </div>
+
+            <div class="main-box-values">
+                {{notesContent?.date}}
+            </div>
+
+            <div class="inner-box">
+                <div class="highlight-text">
+                    1. Medical History
+                </div>
+                <div class="description">
+                    {{notesContent?.medicalhistory}}
+                </div>
+
+                <div style="padding-top: 10px;" class="highlight-text">
+                    2. Current symptoms
+                </div>
+                <div class="description">
+                    {{notesContent?.currentsympoms}}
+                </div>
+
+                <div style="padding-top: 10px;" class="highlight-text">
+                    3. Relevant personal factors
+                </div>
+                <div class="description">
+                    {{notesContent?.personalfactors}}
+                </div>
+
+            </div>
+
+            <div class="highlight-text" style="margin-top: 10px;">Healthcare Needs and Goals</div>
+            <div class="inner-box-2">
+               <p class="description">Improve glycemic control and reduce HbA1c level to 7% within six months
+                Manage hypertension and maintain a blood pressure of 130/80 mmHg
+                Promote healthy lifestyle changes to achieve weight loss and improve overall health</p>
+
+            </div>
+
+            <div class="highlight-text" style="margin-top: 10px;">Interventions & Treatments</div>
+            <div class="inner-box-3">
+                <div style="padding-top: 10px;" class="highlight-text">
+                    <div class="highlight-text">
+                        1. Medical History
+                    </div>
+                    <div class="description">
+                        {{notesContent?.medicine}}
+                    </div>
+                    <div style="padding-top: 10px;" class="highlight-text">
+                    2. Current symptoms
+                    </div>
+                <div class="description">
+                    {{notesContent?.nutrition}}
+                </div>
+
+            </div>
+            </div>
+
+            <div style="margin-top: 15px;"><span class="main-box-headings" >Prescribed by:</span><span> Joseph jinny</span></div>
+    </div>
+    </div>
+</div>

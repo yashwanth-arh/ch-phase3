@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DemoComponent } from './demo/demo.component';
 import { NewPrescriptionComponent } from './new-prescription/new-prescription.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NewPrescriptionComponent } from './new-prescription/new-prescription.co
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
