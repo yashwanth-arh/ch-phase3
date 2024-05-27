@@ -1,1 +1,23 @@
-<p>notes works!</p>
+<div class="notes-plans-tabs">
+  <div class="rightSide">
+    <button mat-flat-button class="addBtn" (click)="openDialog()">
+      Add Notes
+    </button>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" />
+        <input matEndDate placeholder="End date" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-tab-group color="transparent">
+      <mat-tab label="First"><app-notes-list></app-notes-list> </mat-tab>
+      <mat-tab label="Second"> Content 2 </mat-tab>
+      <mat-tab label="Third"> Content 3 </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
