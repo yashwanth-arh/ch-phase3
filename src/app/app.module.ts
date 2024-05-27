@@ -21,16 +21,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DemoComponent } from './demo/demo.component';
 import { NewPrescriptionComponent } from './new-prescription/new-prescription.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDividerModule } from '@angular/material/divider'; 
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoPageComponent,
     DemoComponent,
-    NewPrescriptionComponent
+    NewPrescriptionComponent,
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -48,6 +52,7 @@ import { NewPrescriptionComponent } from './new-prescription/new-prescription.co
     MatNativeDateModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

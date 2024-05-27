@@ -21,5 +21,8 @@ export class DataService {
   createEMp(): Observable<any>{
     return this.http.get('assets/postEmployee.json')
   }
+  loadNotes(): Observable<any>{
+    return this.http.get('assets/notes-data.json')
+  }
 
 }

@@ -1,1 +1,140 @@
-<p>diet-plan works!</p>
+<div class="care-plan-main-div">
+    <div style="display: flex; flex-direction: row;gap:15px;">
+        <div style="flex: 50%">
+            <div *ngFor="let a of notesData">
+                <span class="status" *ngIf="a.status === 'Active'"> Active diet plan</span>
+                <div  [ngClass]="{ selected: a === notesContent }" class="main-box" *ngIf="a.status === 'Active'"  (click)="notesDescription(a)">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="main-box-headings" style="flex: 33%">
+                        Plan
+                    </div>
+                    <div class="main-box-headings" style="flex: 33%">
+                        Created date
+                    </div>
+                    <div class="main-box-headings" style="flex: 33%">
+                        Validity
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.plan}}
+                    </div>
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.date}}
+                    </div>
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.validity}}
+                    </div>
+                </div>
+                </div>
+            
+                <span class="status" *ngIf="a.status === 'Inactive'">InActive diet plan</span>
+                <div  [ngClass]="{ selected: a === notesContent }" class="main-box" *ngIf="a.status === 'Inactive'" (click)="notesDescription(a)">
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="main-box-headings" style="flex: 33%">
+                            Plan
+                        </div>
+                        <div class="main-box-headings" style="flex: 33%">
+                            Created date
+                        </div>
+                        <div class="main-box-headings" style="flex: 33%">
+                            Validity
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row;">
+                        <div class="main-box-values" style="flex: 33%">
+                            {{a.plan}}
+                        </div>
+                        <div class="main-box-values" style="flex: 33%">
+                            {{a.date}}
+                        </div>
+                        <div class="main-box-values" style="flex: 33%">
+                            {{a.validity}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div style="flex: 50%;" >
+            <span class="status">Diet plan details</span>
+        <div class="main-box-two">
+            
+            <div style="display: flex; flex-direction: row;">
+                <div class="highlight-text" style="flex: 70%;">
+                    {{notesContent?.plan}}
+                </div>
+                <div style="display: flex; flex-direction: row;flex:30%;justify-content: end;gap: 12px;">
+                    <div class="status-box">{{notesContent.status}}</div>
+                </div>
+            </div>
+
+            <div class="main-box-values">
+                {{notesContent?.date}}
+            </div>
+
+            <div class="nutritionbox">
+                <div class="nutriinfo">Nutrition Information</div>
+                <div style="display: flex;flex-direction: row;gap: 10px;">
+                    <div class="nutri-insidebox">
+                        <div style="font-size: 18px;font-weight: 700;color: #1569A1;">
+                            1500
+                        </div>
+                        <div style="padding-top: 5px;" class="main-box-headings">
+                            Calories
+                        </div>
+                    </div>
+
+                    <div class="nutri-insidebox">
+                        <div style="font-size: 18px;font-weight: 700;color: #1569A1;">
+                            5 gm
+                        </div>
+                        <div style="padding-top: 5px;" class="main-box-headings">
+                            Protien
+                        </div>
+                    </div>
+
+                    <div class="nutri-insidebox">
+                        <div style="font-size: 18px;font-weight: 700;color: #1569A1;">
+                            3 gm
+                        </div>
+                        <div style="padding-top: 5px;" class="main-box-headings">
+                            Fat
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="sub-heading">
+                Breakfast
+            </div>
+
+            <div style="padding-top: 15px;padding-bottom: 15px;" class="main-box-headings">
+                {{notesContent?.breakfast}}
+            </div>
+         <div class="divider"></div>
+
+         <div class="sub-heading">
+            Lunch
+        </div>
+
+        <div style="padding-top: 15px;padding-bottom: 15px;" class="main-box-headings">
+            {{notesContent?.lunch}}
+        </div>
+     <div class="divider"></div>
+
+     <div class="sub-heading">
+        Dinner
+    </div>
+
+    <div style="padding-top: 15px;padding-bottom: 15px;" class="main-box-headings">
+        {{notesContent?.dinner}}
+    </div>
+ <div class="divider"></div>
+          
+
+            <div style="margin-top: 15px;"><span class="main-box-headings" >Prescribed by:</span><span> Joseph jinny</span></div>
+    </div>
+    </div>
+</div>

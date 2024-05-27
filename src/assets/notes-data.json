@@ -1,0 +1,105 @@
+{
+    "notesData": [
+        {
+            "id": 1,
+            "Notes": "Soap Note",
+            "date": "10/05/24, 12:20 PM",
+            "createdBy": "Dhanush",
+            "subjective": "Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets",
+            "Assessment": "16 supraerupted and occluding on opposing gingiva",
+            "Plan": "34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rxd antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic",
+            "objective":"No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally."
+        },
+        {
+            "id": 2,
+            "Notes": "APSO Note",
+            "date": "10/05/24, 12:30 PM",
+            "createdBy": "yashwanth",
+            "subjective": "Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets",
+            "Assessment": "16 supraerupted and occluding on opposing gingiva",
+            "Plan": "34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rxd antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic",
+            "objective":"No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally."
+        }
+       
+    ],
+
+    "carePlanData": [
+        {
+            "id": 1,
+            "plan": "Blood pressure care plan",
+            "date": "10/05/24, 12:20 PM",
+            "validity":"10/05/24 - 21/05/24",
+            "status":"Active",
+            "createdBy": "Dhanush",
+            "subjective": "Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets",
+            "Assessment": "16 supraerupted and occluding on opposing gingiva",
+            "Plan": "34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rxd antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic",
+            "objective":"No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally.",
+            "medicalhistory":"Newly diagnosed with type 2 diabetes,Family history of diabetes,Hypertension, Overweight (BMI: 29)",
+            "currentsympoms":"Increased thirst, frequent urination, fatigue, blurred vision",
+            "personalfactors":"Relevant personal factors: Sedentary lifestyle, high-stress job, limited knowledge about diabetes management, non-smoker",
+            "medicine":"Metformin 500 mg, twice daily",
+            "nutrition":"Refer to a registered dietitian for personalized meal planning and education on carbohydrate "
+        },
+        {
+            "id": 2,
+            "plan": "Blood pressure care",
+            "date": "10/05/24, 12:30 PM",
+            "validity":"10/05/24 - 21/05/24",
+            "status":"Inactive",
+            "createdBy": "yashwanth",
+            "subjective": "Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets",
+            "Assessment": "16 supraerupted and occluding on opposing gingiva",
+            "Plan": "34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rxd antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic",
+            "objective":"No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally.",
+            "medicalhistory":"Newly diagnosed with type 2 diabetes,Family history of diabetes,Hypertension, Overweight (BMI: 29)",
+            "currentsympoms":"Increased thirst, frequent urination, fatigue, blurred vision",
+            "personalfactors":"Relevant personal factors: Sedentary lifestyle, high-stress job, limited knowledge about diabetes management, non-smoker",
+            "medicine":"Metformin 500 mg, twice daily",
+            "nutrition":"Refer to a registered dietitian for personalized meal planning and education on carbohydrate "
+        }
+       
+    ],
+
+    "dietPlanData": [
+        {
+            "id": 1,
+            "plan": "Mediterranean diet",
+            "date": "10/05/24, 12:20 PM",
+            "validity":"10/05/24 - 21/05/24",
+            "status":"Active",
+            "createdBy": "Dhanush",
+            "subjective": "Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets",
+            "Assessment": "16 supraerupted and occluding on opposing gingiva",
+            "Plan": "34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rxd antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic",
+            "objective":"No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally.",
+            "medicalhistory":"Newly diagnosed with type 2 diabetes,Family history of diabetes,Hypertension, Overweight (BMI: 29)",
+            "currentsympoms":"Increased thirst, frequent urination, fatigue, blurred vision",
+            "personalfactors":"Relevant personal factors: Sedentary lifestyle, high-stress job, limited knowledge about diabetes management, non-smoker",
+            "medicine":"Metformin 500 mg, twice daily",
+            "nutrition":"Refer to a registered dietitian for personalized meal planning and education on carbohydrate ",
+            "breakfast":"Start the day with this flavorful and vibrant Shakshuka recipe, known as a staple breakfast dish throughout the Middle East. Serve with 2 slices of sprouted grain bread.",
+            "lunch":"In a bowl, combine 7.5 ounces (half a 15-ounce can) canned chickpeas (rinse in a colander for two minutes to remove excess sodium and drain well; save other half for tomorrow's snack), 2 teaspoons olive oil, 1/4 cup chopped white onion, 1/4 cup chopped green pepper (save the rest of the onion and pepper for dinner), 1 tablespoon sliced black olives, 1/4 teaspoon ground black pepper, and 1.5 tablespoons white vinegar. Mix thoroughly. Serve mixture over 2 cups romaine lettuce leaves.",
+            "dinner":"Slice remainder of white onion and green pepper from lunch into chunks; set out 10 grape tomatoes. Alternate pieces of onion, pepper and cherry tomatoes on skewers and grill. Serve with 5 ounces of grilled salmon and one 6-inch whole-wheat pita pocket. Spread pita with 2 tablespoons hummus. Drink 1 cup fat-free milk."
+        },
+        {
+            "id": 2,
+            "plan": "Intermittent fasting",
+            "date": "10/05/24, 12:30 PM",
+            "validity":"10/05/24 - 21/05/24",
+            "status":"Inactive",
+            "createdBy": "yashwanth",
+            "subjective": "Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets Metoprolol Succinate 100 mg Tablets",
+            "Assessment": "16 supraerupted and occluding on opposing gingiva",
+            "Plan": "34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rxd antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic",
+            "objective":"No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally.",
+            "medicalhistory":"Newly diagnosed with type 2 diabetes,Family history of diabetes,Hypertension, Overweight (BMI: 29)",
+            "currentsympoms":"Increased thirst, frequent urination, fatigue, blurred vision",
+            "personalfactors":"Relevant personal factors: Sedentary lifestyle, high-stress job, limited knowledge about diabetes management, non-smoker",
+            "medicine":"Metformin 500 mg, twice daily",
+            "nutrition":"Refer to a registered dietitian for personalized meal planning and education on carbohydrate "
+        }
+       
+    ]
+    
+}
