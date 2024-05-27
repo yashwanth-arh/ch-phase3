@@ -22,13 +22,15 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DemoComponent } from './demo/demo.component';
 import { NewPrescriptionComponent } from './new-prescription/new-prescription.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDividerModule } from '@angular/material/divider'; 
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoPageComponent,
     DemoComponent,
-    NewPrescriptionComponent
+    NewPrescriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatNativeDateModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
