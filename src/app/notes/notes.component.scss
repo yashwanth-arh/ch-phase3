@@ -1,6 +1,12 @@
 .notes-plans-tabs {
     padding: 24px;
 
+    .plansTabs {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
     .rightSide {
         display: flex;
         gap: 5px;

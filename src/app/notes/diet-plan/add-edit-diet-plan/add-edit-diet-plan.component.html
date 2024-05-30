@@ -1,0 +1,120 @@
+<div>
+  <div class="addNotesHeader">
+    <div
+      style="
+        font-family: Helvetica;
+        font-size: 16px;
+        font-weight: 700;
+        color: #5e7e9b;
+      "
+    >
+      New diet plan
+    </div>
+    <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form [formGroup]="headerForm">
+      <div class="headerFormFields">
+        <mat-form-field appearance="outline">
+          <mat-label>Notes Type</mat-label>
+          <mat-select
+            formControlName="noteType"
+            (selectionChange)="notesType($event)"
+          >
+            <mat-option *ngFor="let note of notes" [value]="note">
+              {{ note }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="formsBlock">
+      <form [formGroup]="generalForm" *ngIf="isGeneral">
+        <div class="formFieldBlock">
+          <!-- <label class="titleText">{{ field }}:</label> -->
+          <mat-form-field appearance="outline">
+            <textarea
+              matInput
+              formControlName="generalNote"
+              placeholder="Placeholder"
+              rows="10"
+            ></textarea>
+            <!-- <img
+                matSuffix
+                class="editIcon"
+                (click)="isEditable[i] = !isEditable[i]"
+                *ngIf="isEditable[i]"
+                src="/assets/img/Edit Button.png"
+                style="cursor: pointer"
+              /> -->
+          </mat-form-field>
+        </div>
+      </form>
+      <form [formGroup]="planForms" *ngIf="!isGeneral">
+        <div *ngFor="let field of plansFieldNames; let i = index">
+          <div class="formFieldBlock">
+            <label class="titleText">{{ field.name }}:</label>
+
+            <div *ngIf="field.nutrients">
+              <div [formGroupName]="field.formControlName">
+                <div class="nutrientForm">
+                  <div *ngFor="let nutrient of field.nutrients; let ni = index">
+                    <!-- <label>{{ nutrient.name }}:</label> -->
+                    <mat-form-field appearance="outline">
+                      <input
+                        matInput
+                        [readonly]="isnutrientEditable[ni]"
+                        [formControlName]="nutrient.formControlName"
+                        placeholder="Placeholder"
+                      />
+                      <img
+                        matSuffix
+                        class="nutrientEditIcon"
+                        (click)="
+                          isnutrientEditable[ni] = !isnutrientEditable[ni]
+                        "
+                        *ngIf="isnutrientEditable[ni]"
+                        src="/assets/img/Edit Button.png"
+                        style="cursor: pointer"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="!field.nutrients">
+              <mat-form-field appearance="outline">
+                <textarea
+                  matInput
+                  [readonly]="isEditable[i]"
+                  [formControlName]="getName(field.formControlName)"
+                  placeholder="Placeholder"
+                  rows="5"
+                ></textarea>
+                <img
+                  matSuffix
+                  class="editIcon"
+                  (click)="isEditable[i] = !isEditable[i]"
+                  *ngIf="isEditable[i]"
+                  src="/assets/img/Edit Button.png"
+                  style="cursor: pointer"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" style="padding: 0 24px 24px 0px">
+    <button mat-flat-button class="addBtn" (click)="savePlans(planForms.value)">
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>

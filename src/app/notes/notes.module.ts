@@ -22,6 +22,11 @@ import { AddEditNotesComponent } from "./notes-list/add-edit-notes/add-edit-note
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
+import { PatientSubHeaderComponent } from "../patient-sub-header/patient-sub-header.component";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { ShareCareTeamComponent } from './notes-list/add-edit-notes/share-care-team/share-care-team.component';
+import { AddEditDietPlanComponent } from './diet-plan/add-edit-diet-plan/add-edit-diet-plan.component';
+import { AddEditCarePlanComponent } from './care-plan/add-edit-care-plan/add-edit-care-plan.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,10 @@ import { MatCardModule } from "@angular/material/card";
     CarePlanComponent,
     DietPlanComponent,
     AddEditNotesComponent,
+    PatientSubHeaderComponent,
+    ShareCareTeamComponent,
+    AddEditDietPlanComponent,
+    AddEditCarePlanComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +59,7 @@ import { MatCardModule } from "@angular/material/card";
     MatDialogModule,
     MatToolbarModule,
     MatCardModule,
+    MatCheckboxModule,
   ],
 })
 export class NotesModule {}

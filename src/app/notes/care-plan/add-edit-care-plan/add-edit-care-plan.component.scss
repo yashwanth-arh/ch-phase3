@@ -42,6 +42,14 @@
     }
 }
 
+.closeIcon {
+    height: 22px !important;
+    width: 22px !important;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 19.5px;
+    color: #5E7E9B;
+}
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
     background: #E7F6F2;
@@ -111,15 +119,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-}
-
-.closeIcon {
-    height: 22px !important;
-    width: 22px !important;
-    border: 2px solid;
-    border-radius: 50%;
-    font-size: 19.5px;
-    color: #5E7E9B;
 }
 
 .checkboxSection {

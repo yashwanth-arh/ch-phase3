@@ -8,7 +8,7 @@
         color: #5e7e9b;
       "
     >
-      New Note
+      New care plan
     </div>
     <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
   </div>
@@ -45,25 +45,25 @@
               rows="10"
             ></textarea>
             <!-- <img
-              matSuffix
-              class="editIcon"
-              (click)="isEditable[i] = !isEditable[i]"
-              *ngIf="isEditable[i]"
-              src="/assets/img/Edit Button.png"
-              style="cursor: pointer"
-            /> -->
+                matSuffix
+                class="editIcon"
+                (click)="isEditable[i] = !isEditable[i]"
+                *ngIf="isEditable[i]"
+                src="/assets/img/Edit Button.png"
+                style="cursor: pointer"
+              /> -->
           </mat-form-field>
         </div>
       </form>
       <form [formGroup]="planForms" *ngIf="!isGeneral">
         <div *ngFor="let field of plansFieldNames; let i = index">
           <div class="formFieldBlock">
-            <label class="titleText">{{ field }}:</label>
+            <label class="titleText">{{ field.name }}:</label>
             <mat-form-field appearance="outline">
               <textarea
                 matInput
                 [readonly]="isEditable[i]"
-                [formControlName]="getName(field)"
+                [formControlName]="getName(field.formControlName)"
                 placeholder="Placeholder"
                 rows="5"
               ></textarea>
@@ -80,17 +80,6 @@
         </div>
       </form>
     </div>
-    <section class="checkboxSection">
-      <mat-checkbox class="example-margin">Share to patient</mat-checkbox>
-      <mat-checkbox
-        class="example-margin"
-        value="careTeam"
-        [checked]="team"
-        [disabled]="isDisable"
-        (change)="openCareTeam($event)"
-        >Share to care team</mat-checkbox
-      >
-    </section>
   </mat-dialog-content>
   <mat-dialog-actions align="end" style="padding: 0 24px 24px 0px">
     <button mat-flat-button class="addBtn" (click)="savePlans(planForms.value)">
