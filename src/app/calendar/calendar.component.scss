@@ -7,7 +7,7 @@
 
 .calendar {
     width: 60%;
-    background-color: #EDEDED;
+    background-color: #F4F4F4;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -22,10 +22,26 @@
 }
 
 .nav-button {
-    background: none;
-    border: none;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
     cursor: pointer;
+    background: #52B204;
+    border-radius: 50%;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+}
+
+.hidden {
+    background: #F4F4F4;
+    color: #B5BEC6;
+}
+
+.dateHeader {
+    color: #424242;
 }
 
 .calendar-body {
@@ -39,6 +55,14 @@
     display: contents;
     background-color: #007bff;
 }
+
+.daysDiv {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
 
 .highlight {
     background-color: #007bff;
@@ -89,15 +113,34 @@
 .care-gaps-header {
     padding: 10px 0;
     font-weight: bold;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #C2FFE4;
 }
 
 .care-gap-item {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 400;
     padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #C2FFE4;
+    color: #424242;
 }
 
-.care-gap-item:last-child {
-    border-bottom: none;
+// .care-gap-item:last-child {
+//     // border-bottom: none;
+// }
+.noActivity {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    height: 20em;
+    padding: 10px 0;
+    color: #424242;
+    justify-content: center;
+    align-items: center;
 }
 
 .care-gap-item span {
