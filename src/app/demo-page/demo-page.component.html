@@ -1,0 +1,125 @@
+<div class="header-div">
+    <div class="title"> New prescription</div>
+    <div>
+        <section class="example-section">
+            <mat-radio-group [(ngModel)]="labelPosition" class="radio-btn" (change)="changeTab($event)">
+                <mat-radio-button class="example-margin" value="medication">Medication</mat-radio-button>
+                <mat-radio-button class="example-margin" value="labTest">Lab Test</mat-radio-button>
+                <mat-radio-button class="example-margin" value="others">Others</mat-radio-button>
+            </mat-radio-group>
+        </section>
+    </div>
+    <div>
+        <div class="search-container">
+            <mat-form-field appearance="outline">
+                <input type="text" placeholder="Enter medicine name" matInput [matAutocomplete]="auto">
+                <mat-icon>search</mat-icon>
+                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
+                    (optionSelected)="optionSelected($event)">
+                    <mat-option *ngFor="let item of options; let index" [value]="item">
+                        <div class="option-container">
+                            <span>{{displayName(item)}}</span>
+                            <span class="add-button" (click)="addPrescription(item)">Add</span>
+                        </div>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="table-div">
+        <div class="header-teable-div">
+            <div>Medicine name</div>
+            <div>Frequency</div>
+            <div>Dose</div>
+            <div>Special Instruction</div>
+            <div>Duration</div>
+            <div>Start Date</div>
+        </div>
+        <div>
+            <div class="table-data-div">
+                <div *ngIf="addPrescriptionName?.length">
+                    <form [formGroup]="prescriptionForm">
+                        <div>
+                            <div class="prescr-div">New prescription</div>
+                            <div class="sub-header" fxLayout="row">
+                                <div style="width: 117px;" formControlName="medicationName">{{ addPrescriptionName }}
+                                </div>
+                                <div fxLayout="row" fxLayoutGap="10px">
+                                    <mat-form-field appearance="outline" fxFlex="206px">
+                                        <mat-label>Select an option</mat-label>
+                                        <mat-select formControlName="formulation"
+                                            (selectionChange)="onFormulationChange($event.value)">
+                                            <mat-option>None</mat-option>
+                                            <mat-option *ngFor="let item of formulation" [value]="item">{{
+                                                item
+                                                }}</mat-option>
+                                        </mat-select>
+                                        <mat-error>Formulation is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="checkbox-dev" formGroupName="checkboxOptions">
+                                    <mat-checkbox formControlName="morning" (click)="checkbox( $event)">-
+                                        &nbsp;&nbsp;</mat-checkbox>
+                                    <mat-checkbox formControlName="afternoon" (click)="checkbox( $event)"> -
+                                        &nbsp;&nbsp;</mat-checkbox>
+                                    <mat-checkbox formControlName="night" (click)="checkbox( $event)"></mat-checkbox>
+                                </div>
+                                <div><mat-form-field appearance="outline">
+                                        <mat-label>Select an option</mat-label>
+                                        <mat-select [(value)]="value" formControlName="intakeTime">
+                                            <mat-option>None</mat-option>
+                                            <mat-option value="option1">Before food</mat-option>
+                                            <mat-option value="option2">After food</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="mat-num-div">
+                                    <mat-form-field appearance="outline">
+                                        <input matInput formControlName="quantity" type="number">
+                                    </mat-form-field>
+                                </div>
+                                <div class="date-div">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Choose a date</mat-label>
+                                        <input matInput formControlName="date" [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <img src="../../assets/trash-2.svg" (click)="onDelete()" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                </div>
+
+                <div *ngIf="addLabTestName?.length">
+                    <div class="prescr-div">Lab tests</div>
+                    <div
+                        style="display: flex; justify-content: space-between; margin: 0 15px 0 15px;border-top: 0.5px solid #E4E4E4;  padding-top: 15px;">
+                        <div>{{addLabTestName}}</div>
+                        <div> <img src="../../assets/trash-2.svg" (click)="onDelete()" alt=""></div>
+                    </div>
+                    <hr>
+                </div>
+
+                <div>
+                    <div *ngIf="addOthersName?.length">
+                        <div class="prescr-div">Therapies</div>
+                        <div
+                            style="display: flex; justify-content: space-between; margin: 0 15px 0 15px; border-top: 0.5px solid #E4E4E4;  padding-top: 15px;">
+                            <div>{{addOthersName}}</div>
+                            <div> <img src="../../assets/trash-2.svg" (click)="onDelete()" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 5px; justify-content: end;">
+                <button class="cancel-button" type="submit">Cancel</button>
+                <button class="save-button" (click)="addMedicine()">Prescribe</button>
+            </div>
+        </div>
+    </div>
+</div>

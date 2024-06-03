@@ -1,0 +1,151 @@
+<div class="main-div">
+    <div style="display: flex; justify-content: end; padding: 10px;">
+        <button class="pres-btn" routerLink="/prescription">New Prescription</button>
+    </div>
+
+    <mat-card>
+        <div class="main-div-table">
+            <table mat-table class="rounded" [dataSource]="dataSource" multiTemplateDataRows
+                class="mat-elevation-z8 mat-table-div">
+                <ng-container matColumnDef="expand">
+                    <th mat-header-cell style="flex: 0 0 80px;width: 5%;" *matHeaderCellDef></th>
+                    <td mat-cell style="flex: 0 0 80px;width: 5%;" *matCellDef="let element">
+                        <button mat-icon-button class="expand-button">
+                            <mat-icon class="expand-icon" (click)="toggleRow(element)">
+                                {{ expandedElement === element ? 'expand_less' : 'expand_more' }}
+                            </mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="PrescriptionID">
+                    <th mat-header-cell *matHeaderCellDef>PrescriptionID</th>
+                    <td mat-cell *matCellDef="let element">{{element.PrescriptionID}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="PrescribedBy">
+                    <th mat-header-cell *matHeaderCellDef>Prescribed By</th>
+                    <td mat-cell *matCellDef="let element">{{element.PrescribedBy}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="PrescribedOn">
+                    <th mat-header-cell *matHeaderCellDef>Prescribed On</th>
+                    <td mat-cell *matCellDef="let element">{{element.PrescribedOn}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Validity">
+                    <th mat-header-cell *matHeaderCellDef>Validity</th>
+                    <td mat-cell *matCellDef="let element">{{element.Validity}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Status">
+                    <th mat-header-cell *matHeaderCellDef>Status</th>
+                    <td mat-cell *matCellDef="let element"> <mat-hint
+                            [ngClass]="element?.Status == 'Active' ? 'active' : 'expired'">{{element.Status}}</mat-hint>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td mat-cell *matCellDef="let element">
+                        <div style="display: flex;gap: 20px;">
+                            <button (click)="viewImage()" class="btu-btu">View</button>
+                            <button (click)="downloadImage()" class="btu-btu">Download</button>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="expandedDetail">
+                    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length"
+                        style="padding: 4px;">
+                        <div *ngIf="expandedElement === element">
+                            <div>
+                                <div class="mat-elevation-z8 table-divs">
+                                    <mat-table [dataSource]="element.medicines" class="mat-table">
+                                        <ng-container matColumnDef="medicine">
+                                            <mat-header-cell *matHeaderCellDef>Medicine</mat-header-cell>
+                                            <mat-cell *matCellDef="let med">{{med.medicine}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="startDate">
+                                            <mat-header-cell *matHeaderCellDef>Start Date</mat-header-cell>
+                                            <mat-cell *matCellDef="let med">{{med.startDate}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="frequency">
+                                            <mat-header-cell *matHeaderCellDef>Frequency</mat-header-cell>
+                                            <mat-cell *matCellDef="let med">{{med.frequency}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="specialInstruction">
+                                            <mat-header-cell *matHeaderCellDef>Special Instruction</mat-header-cell>
+                                            <mat-cell *matCellDef="let med">{{med.specialInstruction}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="duration">
+                                            <mat-header-cell *matHeaderCellDef>Duration (days)</mat-header-cell>
+                                            <mat-cell *matCellDef="let med">{{med.duration}}</mat-cell>
+                                        </ng-container>
+                                        <mat-header-row
+                                            *matHeaderRowDef="['medicine', 'startDate', 'frequency', 'specialInstruction', 'duration']"></mat-header-row>
+                                        <mat-row
+                                            *matRowDef="let row; columns: ['medicine', 'startDate', 'frequency', 'specialInstruction', 'duration']"></mat-row>
+                                    </mat-table>
+                                </div>
+
+                                <div class="mat-elevation-z8 table-divs">
+                                    <mat-table [dataSource]="element.labTests" class="full-width-table">
+                                        <ng-container matColumnDef="testName">
+                                            <mat-header-cell *matHeaderCellDef>Lab Test</mat-header-cell>
+                                            <mat-cell *matCellDef="let test">{{test.testName}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="testCode">
+                                            <mat-header-cell *matHeaderCellDef>Test Code</mat-header-cell>
+                                            <mat-cell *matCellDef="let test">{{test.testCode}}</mat-cell>
+                                        </ng-container>
+                                        <mat-header-row *matHeaderRowDef="['testName', 'testCode']"></mat-header-row>
+                                        <mat-row *matRowDef="let row; columns: ['testName', 'testCode']"></mat-row>
+                                    </mat-table>
+                                </div>
+
+                                <div class="mat-elevation-z8 table-divs">
+                                    <mat-table [dataSource]="element.therapies" class="full-width-table">
+                                        <ng-container matColumnDef="therapy">
+                                            <mat-header-cell *matHeaderCellDef>Therapy</mat-header-cell>
+                                            <mat-cell *matCellDef="let therapy">{{therapy.therapy}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="code">
+                                            <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
+                                            <mat-cell *matCellDef="let therapy">{{therapy.code}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="startDate">
+                                            <mat-header-cell *matHeaderCellDef>Start Date</mat-header-cell>
+                                            <mat-cell *matCellDef="let therapy">{{therapy.startDate}}</mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="duration">
+                                            <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+                                            <mat-cell *matCellDef="let therapy">{{therapy.duration}}</mat-cell>
+                                        </ng-container>
+                                        <mat-header-row
+                                            *matHeaderRowDef="['therapy', 'code', 'startDate', 'duration']"></mat-header-row>
+                                        <mat-row
+                                            *matRowDef="let row; columns: ['therapy', 'code', 'startDate', 'duration']"></mat-row>
+                                    </mat-table>
+                                    <div class="note">
+                                        <p><strong>Instructions:</strong> Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing
+                                            elit. Aliquam aenean enim condimentum imperdiet sagittis non. Blandit
+                                            imperdiet
+                                            tortor dolor libero, tristique nunc, mauris arcu nulla.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+                <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;" class="example-element-row"
+                    [class.example-expanded-row]="expandedElement === element"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+            </table>
+        </div>
+    </mat-card>
+</div>

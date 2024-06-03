@@ -1,0 +1,99 @@
+{
+    "prescriptions": [
+      {
+        "PrescriptionID": "Pre_1024",
+        "PrescribedBy": "Dr. Venu Gopal",
+        "PrescribedOn": "28/05/2021",
+        "Validity": "29/05/2021 - 15/06/2021",
+        "Status": "Active",
+        "medicines": [
+          {
+            "medicine": "Dolo 500 mg Tablet",
+            "startDate": "29/01/2024",
+            "frequency": "Twice daily",
+            "specialInstruction": "After food",
+            "duration": 1
+          },
+          {
+            "medicine": "Paracetamol 500 mg",
+            "startDate": "30/01/2024",
+            "frequency": "Once daily",
+            "specialInstruction": "Before food",
+            "duration": 5
+          }
+        ],
+        "labTests": [
+          {
+            "testName": "Basic Metabolic Panel (BMP)",
+            "testCode": "L001"
+          },
+          {
+            "testName": "Complete Blood Count (CBC)",
+            "testCode": "L003"
+          }
+        ],
+        "therapies": [
+          {
+            "therapy": "Cardiovascular physiotherapy",
+            "code": "T12L-Therapy",
+            "startDate": "01/05/2023",
+            "duration": "6 weeks"
+          }
+        ]
+      },
+      {
+        "PrescriptionID": "Pre_1025",
+        "PrescribedBy": "Dr. John Doe",
+        "PrescribedOn": "01/04/2021",
+        "Validity": "01/04/2021 - 30/04/2021",
+        "Status": "Expired",
+        "medicines": [
+          {
+            "medicine": "Ibuprofen 200 mg",
+            "startDate": "02/04/2021",
+            "frequency": "Three times daily",
+            "specialInstruction": "With water",
+            "duration": 3
+          }
+        ],
+        "labTests": [
+          {
+            "testName": "Liver Function Test (LFT)",
+            "testCode": "L004"
+          }
+        ],
+        "therapies": []
+      },
+      {
+        "PrescriptionID": "Pre_1026",
+        "PrescribedBy": "Dr. Jane Smith",
+        "PrescribedOn": "15/04/2021",
+        "Validity": "15/05/2021 - 15/06/2021",
+        "Status": "Active",
+        "medicines": [
+          {
+            "medicine": "Amoxicillin 500 mg",
+            "startDate": "16/04/2021",
+            "frequency": "Twice daily",
+            "specialInstruction": "With food",
+            "duration": 7
+          }
+        ],
+        "labTests": [
+          {
+            "testName": "Thyroid Function Test (TFT)",
+            "testCode": "L005"
+          }
+        ],
+        "therapies": [
+          {
+            "therapy": "Respiratory physiotherapy",
+            "code": "T14R-Therapy",
+            "startDate": "20/04/2023",
+            "duration": "4 weeks"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,6 @@
+<p>care-gap-chart works!</p>
+<div style="display: flex;">
+    <div *ngFor="let option of chartOptions" class="chart-container">
+        <echarts [options]="option" class="echart"></echarts>
+    </div>
+</div>
