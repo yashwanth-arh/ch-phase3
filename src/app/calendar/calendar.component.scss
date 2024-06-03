@@ -1,0 +1,106 @@
+.care-gaps-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f0f4f8;
+}
+
+.calendar {
+    width: 60%;
+    background-color: #EDEDED;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-row {
+    display: contents;
+    background-color: #007bff;
+}
+
+.highlight {
+    background-color: #007bff;
+    color: white;
+    // border-radius: 50%;
+    display: inline-block;
+    border-radius: 14.5px;
+    width: 61.37px;
+    height: 26px;
+    // line-height: 24px;
+    align-items: center;
+    justify-self: center;
+}
+
+.inactive {
+    color: #ccc;
+    height: 26px;
+}
+
+.missed {
+    background-color: #A5C5DA;
+    width: 61.37px;
+    height: 26px;
+    border-radius: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedDays {
+    background-color: red;
+    width: 61.37px;
+    height: 26px;
+    border-radius: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.care-gaps-list {
+    width: 35%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.care-gaps-header {
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.care-gap-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.care-gap-item:last-child {
+    border-bottom: none;
+}
+
+.care-gap-item span {
+    display: block;
+    color: #666;
+}

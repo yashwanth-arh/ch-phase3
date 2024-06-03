@@ -42,7 +42,7 @@
               matInput
               formControlName="generalNote"
               placeholder="Placeholder"
-              rows="10"
+              rows="16"
             ></textarea>
             <!-- <img
               matSuffix
@@ -93,6 +93,9 @@
     </section>
   </mat-dialog-content>
   <mat-dialog-actions align="end" style="padding: 0 24px 24px 0px">
+    <button mat-stroked-button class="cancelBtn" mat-dialog-close>
+      Cancel
+    </button>
     <button mat-flat-button class="addBtn" (click)="savePlans(planForms.value)">
       Save
     </button>
