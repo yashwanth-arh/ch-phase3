@@ -6,6 +6,7 @@ import { NewPrescriptionComponent } from './new-prescription/new-prescription.co
 import { MedicineTabComponent } from './medicine-tab/medicine-tab.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component';
+import { LifeStyleComponent } from './life-style/life-style.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'caregaps',
     component:CareGapChartComponent
+  },
+  {
+    path:'lifestyle',
+    component:LifeStyleComponent
   },
   {
     path:'demo',

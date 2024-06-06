@@ -26,8 +26,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ImageDialogComponent } from './image-dialog/image-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { LifeStyleComponent } from './life-style/life-style.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
     MedicineTabComponent,
     PageNotFoundComponent,
     ImageDialogComponent,
-    CareGapChartComponent
+    CareGapChartComponent,
+    LifeStyleComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     ReactiveFormsModule,
     MatExpansionModule,
     MatDialogModule,
+    MatTabsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })

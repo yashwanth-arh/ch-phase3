@@ -1,0 +1,74 @@
+<div>
+    <mat-tab-group>
+        <mat-tab label="Lifestyle Indicators">
+            <div class="content">
+                <div class="left">
+                    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                        <!-- Date Column -->
+                        <ng-container matColumnDef="date">
+                            <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+                        </ng-container>
+
+                        <!-- Lifestyle Indicators Column -->
+                        <ng-container matColumnDef="indicators">
+                            <mat-header-cell *matHeaderCellDef> Lifestyle Indicators </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <img *ngFor="let indicator of element.indicators" [src]="indicator"
+                                    class="indicator-icon">
+                            </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
+                <div class="right">
+                    <mat-card class="adherence-card">
+                        <mat-card-header>
+                            <mat-card-title>Lifestyle Indicators details</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="adherence-summary">
+                                <p>Adhered: <span class="adhered">10 days</span></p>
+                                <p>Not Adhered: <span class="not-adhered">05 days</span></p>
+                                <p>Reported: <span class="reported">12 days</span></p>
+                                <p>Not Reported: <span class="not-reported">03 days</span></p>
+                            </div>
+                            <div class="indicator-details">
+                                <div class="indicator-detail">
+                                    <p>Medication</p>
+                                    <p>Adhered</p>
+                                </div>
+                                <div class="indicator-detail">
+                                    <p>Food</p>
+                                    <p>Adhered</p>
+                                </div>
+                                <div class="indicator-detail">
+                                    <p>Activity</p>
+                                    <p>Not Adhered</p>
+                                </div>
+                                <div class="indicator-detail">
+                                    <p>Sleep</p>
+                                    <p>Adhered</p>
+                                </div>
+                                <div class="indicator-detail">
+                                    <p>Stress</p>
+                                    <p>Reported</p>
+                                </div>
+                                <div class="indicator-detail">
+                                    <p>Alcohol</p>
+                                    <p>Not Reported</p>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Patient Diary">
+            Content for Patient Diary
+        </mat-tab>
+    </mat-tab-group>
+</div>
