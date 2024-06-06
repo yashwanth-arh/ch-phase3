@@ -41,7 +41,7 @@
                     <form [formGroup]="prescriptionForm">
                         <div>
                             <div class="prescr-div">New prescription</div>
-                            <div class="sub-header" fxLayout="row"> 
+                            <div class="sub-header" fxLayout="row">
                                 <div style="width: 117px;" formControlName="medicationName">{{ addPrescriptionName }}
                                 </div>
                                 <div fxLayout="row" fxLayoutGap="10px">
@@ -115,6 +115,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div style="display: flex; gap: 5px; justify-content: end;">
+                <button class="cancel-button" type="submit">Cancel</button>
+                <button class="save-button" (click)="addMedicine()">Prescribe</button>
             </div>
         </div>
     </div>
