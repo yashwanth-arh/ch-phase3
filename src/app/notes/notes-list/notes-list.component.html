@@ -1,0 +1,84 @@
+<div class="main-div">
+    <div style="display: flex; flex-direction: row;gap:15px;">
+        <div style="flex: 50%">
+            <div  [ngClass]="{ selected: a === notesContent }" class="main-box" *ngFor="let a of notesData" (click)="notesDescription(a)">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="main-box-headings" style="flex: 33%">
+                        Notes
+                    </div>
+                    <div class="main-box-headings" style="flex: 33%">
+                        Created date
+                    </div>
+                    <div class="main-box-headings" style="flex: 33%">
+                        Created by
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.Notes}}
+                    </div>
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.date}}
+                    </div>
+                    <div class="main-box-values" style="flex: 33%">
+                        {{a.createdBy}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="flex: 50%;" class="main-box-two">
+            <div style="display: flex; flex-direction: row;">
+                <div class="highlight-text" style="flex: 30%;">
+                    {{notesContent?.Notes}}
+                </div>
+                <div style="display: flex; flex-direction: row;flex:40%;gap: 12px;">
+                    <div>
+                    <span class="main-box-headings">Created by: </span> <span class="main-box-values">{{notesContent?.createdBy}}</span>
+                    </div>
+                    <div>
+                        <img src="/assets/img/Share Icon.png">
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: row;flex:30%;justify-content: end;gap: 12px;">
+                    <img src="/assets/img/Edit Button.png">
+                    <img src="/assets/img/Delete Button.png">
+                </div>
+            </div>
+
+            <div class="main-box-values">
+                {{notesContent?.date}}
+            </div>
+
+            <div class="inner-box">
+                <div class="highlight-text">
+                    Subjective
+                </div>
+                <div class="description">
+                    {{notesContent?.subjective}}
+                </div>
+
+                <div style="padding-top: 10px;" class="highlight-text">
+                    Objective
+                </div>
+                <div class="description">
+                    {{notesContent?.objective}}
+                </div>
+
+                <div style="padding-top: 10px;" class="highlight-text">
+                    Assessment
+                </div>
+                <div class="description">
+                    {{notesContent?.Assessment}}
+                </div>
+
+                <div style="padding-top: 10px;" class="highlight-text">
+                    Plan
+                </div>
+                <div class="description">
+                    {{notesContent?.Plan}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+.notes-plans-tabs {
+    padding: 24px;
+
+    .plansTabs {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .rightSide {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addBtn {
+        background: #01CD74 !important;
+        color: #fff !important;
+    }
+
+    .mat-tab-labels {
+        background: #B8DCF4;
+        width: fit-content;
+        border-radius: 6px;
+        // height: 38px;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .mat-tab-label {
+        height: 30px !important;
+        // opacity: ;
+        border-radius: 6px;
+        color: #5F6368 !important;
+    }
+
+    .mat-tab-label-active {
+        background: #ffffff !important;
+        opacity: 1 !important;
+    }
+
+    .mat-tab-nav-bar,
+    .mat-tab-header {
+        border-bottom: none !important;
+        width: fit-content !important;
+    }
+
+    .rightSide {
+        position: absolute;
+        right: 24px;
+    }
+
+    // Date Picker
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0 0 0 0 !important;
+        height: 40px !important;
+    }
+
+    .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+    .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+        transform: translateY(-0.9em) scale(0.75);
+        width: 133.3333333333%;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+    }
+
+    // .mat-form-field-appearance-outline .mat-form-field-label {
+    //     top: 0 !important;
+    //     margin-top: -0.5em !important;
+    // }
+    .mat-form-field-appearance-outline .mat-form-field-label {
+        top: 1em !important;
+    }
+}

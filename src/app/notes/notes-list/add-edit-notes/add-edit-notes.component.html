@@ -1,0 +1,103 @@
+<div>
+  <div class="addNotesHeader">
+    <div
+      style="
+        font-family: Helvetica;
+        font-size: 16px;
+        font-weight: 700;
+        color: #5e7e9b;
+      "
+    >
+      New Note
+    </div>
+    <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form [formGroup]="headerForm">
+      <div class="headerFormFields">
+        <mat-form-field appearance="outline">
+          <mat-label>Notes Type</mat-label>
+          <mat-select
+            formControlName="noteType"
+            (selectionChange)="notesType($event)"
+          >
+            <mat-option *ngFor="let note of notes" [value]="note">
+              {{ note }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" />
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="formsBlock">
+      <form [formGroup]="generalForm" *ngIf="isGeneral">
+        <div class="formFieldBlock">
+          <!-- <label class="titleText">{{ field }}:</label> -->
+          <mat-form-field appearance="outline">
+            <textarea
+              matInput
+              formControlName="generalNote"
+              placeholder="Placeholder"
+              rows="16"
+            ></textarea>
+            <!-- <img
+              matSuffix
+              class="editIcon"
+              (click)="isEditable[i] = !isEditable[i]"
+              *ngIf="isEditable[i]"
+              src="/assets/img/Edit Button.png"
+              style="cursor: pointer"
+            /> -->
+          </mat-form-field>
+        </div>
+      </form>
+      <form [formGroup]="planForms" *ngIf="!isGeneral">
+        <div *ngFor="let field of plansFieldNames; let i = index">
+          <div class="formFieldBlock">
+            <label class="titleText">{{ field }}:</label>
+            <mat-form-field appearance="outline">
+              <textarea
+                matInput
+                [readonly]="isEditable[i]"
+                [formControlName]="getName(field)"
+                placeholder="Placeholder"
+                rows="5"
+              ></textarea>
+              <img
+                matSuffix
+                class="editIcon"
+                (click)="isEditable[i] = !isEditable[i]"
+                *ngIf="isEditable[i]"
+                src="/assets/img/Edit Button.png"
+                style="cursor: pointer"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+    <section class="checkboxSection">
+      <mat-checkbox class="example-margin">Share to patient</mat-checkbox>
+      <mat-checkbox
+        class="example-margin"
+        value="careTeam"
+        [checked]="team"
+        [disabled]="isDisable"
+        (change)="openCareTeam($event)"
+        >Share to care team</mat-checkbox
+      >
+    </section>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" style="padding: 0 24px 24px 0px">
+    <button mat-stroked-button class="cancelBtn" mat-dialog-close>
+      Cancel
+    </button>
+    <button mat-flat-button class="addBtn" (click)="savePlans(planForms.value)">
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>

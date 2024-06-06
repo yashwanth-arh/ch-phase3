@@ -1,0 +1,175 @@
+.mat-dialog-container {
+    background-color: #ECFFFA;
+    padding: 0 !important;
+    height: 80vh !important;
+    width: 80em;
+    border-radius: 12px;
+
+    /* Set your desired background color here */
+}
+
+.headerFormFields {
+    display: flex;
+    gap: 25px;
+    padding-bottom: 20px;
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    .mat-select {
+        height: 20px;
+    }
+
+    .mat-form-field {
+        width: 370px;
+    }
+
+    .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+    .mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+
+        top: 25px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-label {
+
+        top: 18px;
+    }
+
+    input.mat-input-element {
+        padding-bottom: 5px;
+    }
+}
+
+.closeIcon {
+    height: 22px !important;
+    width: 22px !important;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 19.5px;
+    color: #5E7E9B;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    background: #E7F6F2;
+    border-radius: 5px;
+}
+
+.titleText {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.formsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addBtn {
+    background: #01CD74 !important;
+    color: #fff !important;
+}
+
+.cancelBtn {
+    color: #01CD74;
+    border-color: #01CD74;
+}
+
+.mat-dialog-content {
+    margin: 0 !important;
+    max-height: none;
+    padding: 24px 24px;
+}
+
+.addNotesHeader {
+    background-color: #ffffff;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+}
+
+.editIcon {
+    position: relative;
+    top: -68px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: .5em 0 !important;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+// .mat-form-field {
+//     height: 80px;
+// }
+
+.mat-form-field-flex,
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    // height: 80px;
+}
+
+.formFieldBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .mat-form-field {
+        width: 100%;
+    }
+
+    .nutrientForm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nutrientEditIcon {
+            position: relative;
+            top: -9px;
+        }
+
+        .mat-form-field-appearance-outline .mat-form-field-infix {
+            top: -4px !important;
+        }
+
+        .mat-form-field {
+            width: 340px;
+        }
+    }
+}
+
+.checkboxSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #01CD74;
+}
+
+.mat-checkbox-frame {
+    border: 2px solid #01CD74;
+}
+
+// .mat-form-field-appearance-outline .mat-form-field-outline {
+//     display: flex;
+//     position: absolute;
+//     top: 0.25em;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     pointer-events: none;
+// }

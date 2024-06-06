@@ -65,6 +65,7 @@ import { LifeStyleComponent } from './life-style/life-style.component';
     MatExpansionModule,
     MatDialogModule,
     MatTabsModule,
+    MatDialogModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })

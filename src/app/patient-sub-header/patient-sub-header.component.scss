@@ -1,0 +1,82 @@
+.patientSubHeader {
+    background: #1A5EBA;
+    color: #fff;
+    height: 78px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .vitalTitle {
+        font-family: Helvetica;
+        font-size: 14px;
+        font-weight: 400;
+        color: #BEDAFF;
+
+    }
+
+    .vitalSubText {
+        font-family: Helvetica;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+.subLine {
+    width: 1px;
+    height: 50px;
+    background: #95BDD2;
+}
+
+
+.nameCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .imgCircle {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border-color: #95BDD2;
+        background: #fff;
+    }
+
+    .nameTitle {
+        color: #fff;
+    }
+}
+
+.vitals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+
+    .vitalBox {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #0A4CA5;
+        width: 468px;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+
+    .subLine1 {
+        width: 1px;
+        height: 30px;
+        background: #95BDD2;
+    }
+}
+
+.vitalInside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
