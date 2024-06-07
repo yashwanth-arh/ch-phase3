@@ -82,6 +82,32 @@ mat-form-field {
 .table-div {
     margin: 24px 0 0 0;
 
+    .cancel-button {
+        background-color: white;
+        color: #52B204;
+        border: #52B204 1px solid;
+        border-radius: 10px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        outline: none;
+        width: 7rem;
+        height: 29px;
+    }
+
+    .save-button {
+        background-color: #52B204;
+        color: white;
+        border-radius: 10px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        outline: none;
+        width: 7rem;
+        height: 29px;
+        border: none;
+    }
+
     .header-teable-div {
         display: flex;
         justify-content: space-between;
@@ -95,7 +121,7 @@ mat-form-field {
 
     .table-data-div {
         width: 100%;
-        height: 100vh;
+        height: 35em;
         border-radius: 10px 0px 0px 0px;
         background: #F5FBFF;
         border-color: #DEE0EF;

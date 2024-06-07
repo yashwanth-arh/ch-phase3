@@ -1,0 +1,57 @@
+[
+    {
+        "date": "20/02/2024, 7:30 AM",
+        "indicators": [
+            "assets/icons/medication.png",
+            "assets/icons/food.png",
+            "assets/icons/activity.png",
+            "assets/icons/sleep.png",
+            "assets/icons/stress.png",
+            "assets/icons/alcohol.png"
+        ]
+    },
+    {
+        "date": "19/02/2024, 7:30 AM",
+        "indicators": [
+            "assets/icons/medication.png",
+            "assets/icons/food.png",
+            "assets/icons/activity.png",
+            "assets/icons/sleep.png",
+            "assets/icons/stress.png",
+            "assets/icons/alcohol.png"
+        ]
+    },
+    {
+        "date": "18/02/2024, 7:30 AM",
+        "indicators": [
+            "assets/icons/medication.png",
+            "assets/icons/food.png",
+            "assets/icons/activity.png",
+            "assets/icons/sleep.png",
+            "assets/icons/stress.png",
+            "assets/icons/alcohol.png"
+        ]
+    },
+    {
+        "date": "17/02/2024, 7:30 AM",
+        "indicators": [
+            "assets/icons/medication.png",
+            "assets/icons/food.png",
+            "assets/icons/activity.png",
+            "assets/icons/sleep.png",
+            "assets/icons/stress.png",
+            "assets/icons/alcohol.png"
+        ]
+    },
+    {
+        "date": "16/02/2024, 7:30 AM",
+        "indicators": [
+            "assets/icons/medication.png",
+            "assets/icons/food.png",
+            "assets/icons/activity.png",
+            "assets/icons/sleep.png",
+            "assets/icons/stress.png",
+            "assets/icons/alcohol.png"
+        ]
+    }
+]

@@ -79,7 +79,21 @@ export class DemoPageComponent implements OnInit {
       this.addOthersName = item.Name
     }
   }
+  get medicines(): FormArray {
+    return this.prescriptionForm.get('medicines') as FormArray;
+  }
+  addMedicine() {
+    const medicineFG = this.fb.group({
+      medicineName: ['', Validators.required],
+      frequency: ['', Validators.required],
+      dose: this.fb.array(['morning', 'afternoon', 'night'].map(day => new FormControl(false))),
+      specialInstruction: ['', Validators.required],
+      duration: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      startDate: ['', Validators.required]
+    });
 
+    this.medicines.push(medicineFG);
+  }
   getNames() {
     if (this.labelPosition === 'medication') {
       this.options = []
