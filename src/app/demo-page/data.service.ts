@@ -27,5 +27,7 @@ export class DataService {
   loadNotes(): Observable<any> {
     return this.http.get('assets/notes-data.json')
   }
-
+  getCalendarEvents(): Observable<any> {
+    return this.http.get('assets/calendar-events.json')
+  }
 }

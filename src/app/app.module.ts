@@ -30,6 +30,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { LifeStyleComponent } from './life-style/life-style.component';
+import { CareGapEventsComponent } from './care-gap-events/care-gap-events.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LifeStyleComponent } from './life-style/life-style.component';
     PageNotFoundComponent,
     ImageDialogComponent,
     CareGapChartComponent,
-    LifeStyleComponent
+    LifeStyleComponent,
+    CareGapEventsComponent
   ],
   imports: [
     BrowserModule,
