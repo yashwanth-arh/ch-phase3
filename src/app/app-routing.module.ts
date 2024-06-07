@@ -7,6 +7,7 @@ import { MedicineTabComponent } from './medicine-tab/medicine-tab.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component';
 import { LifeStyleComponent } from './life-style/life-style.component';
+import { CareGapEventsComponent } from './care-gap-events/care-gap-events.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
     path: 'prescription',
     component: DemoPageComponent
   },
-  // {
+   // {
   //   path: '',
   //   redirectTo: 'medicinetab',
   //   pathMatch: 'full',
@@ -36,31 +37,31 @@ const routes: Routes = [
     path: 'new',
     component: NewPrescriptionComponent
   },
-  {
-    path: 'medicinetab',
-    component: MedicineTabComponent
-  },
-  {
-    path: '',
-    pathMatch: 'prefix', //default
-    redirectTo: 'medicinetab'
-  },
+  // {
+  //   path: 'medicinetab',
+  //   component: MedicineTabComponent
+  // },
+  // {
+  //   path: '',
+  //   pathMatch: 'prefix', //default
+  //   redirectTo: 'medicinetab'
+  // },
 
 
 
-  {
-    path: '**',
-    component: PageNotFoundComponent
-  },
-  {
-    path: "",
-    component: DemoPageComponent,
-  },
-  {
-    path: "",
-    redirectTo: "",
-    pathMatch: "full",
-  },
+  // {
+  //   path: '**',
+  //   component: PageNotFoundComponent
+  // },
+  // {
+  //   path: "",
+  //   component: DemoPageComponent,
+  // },
+  // {
+  //   path: "",
+  //   redirectTo: "",
+  //   pathMatch: "full",
+  // },
   {
     path: "demo",
     component: DemoComponent,
@@ -68,6 +69,10 @@ const routes: Routes = [
   {
     path: "new",
     component: NewPrescriptionComponent,
+  },
+  {
+    path: "caregaps-events",
+    component: CareGapEventsComponent,
   },
   {
     path: "plans",
@@ -78,6 +83,13 @@ const routes: Routes = [
     path: "calendar",
     loadChildren: () =>
       import("./calendar/calendar.module").then((m) => m.CalendarModule),
+  },
+
+
+
+  {
+    path: '**',
+    component: PageNotFoundComponent
   },
 ];
 
