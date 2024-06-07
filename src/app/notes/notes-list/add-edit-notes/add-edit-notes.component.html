@@ -37,22 +37,23 @@
       <form [formGroup]="generalForm" *ngIf="isGeneral">
         <div class="formFieldBlock">
           <!-- <label class="titleText">{{ field }}:</label> -->
-          <mat-form-field appearance="outline">
+          <!-- <mat-form-field appearance="outline">
             <textarea
               matInput
               formControlName="generalNote"
               placeholder="Placeholder"
               rows="16"
             ></textarea>
-            <!-- <img
-              matSuffix
-              class="editIcon"
-              (click)="isEditable[i] = !isEditable[i]"
-              *ngIf="isEditable[i]"
-              src="/assets/img/Edit Button.png"
-              style="cursor: pointer"
-            /> -->
-          </mat-form-field>
+          </mat-form-field> -->
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+            <ngx-editor
+              [editor]="editor"
+              [ngModel]="html"
+              [disabled]="false"
+              [placeholder]="'Type here...'"
+            ></ngx-editor>
+          </div>
         </div>
       </form>
       <form [formGroup]="planForms" *ngIf="!isGeneral">
