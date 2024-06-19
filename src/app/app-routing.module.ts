@@ -9,45 +9,41 @@ import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component
 import { LifeStyleComponent } from './life-style/life-style.component';
 import { CareGapEventsComponent } from './care-gap-events/care-gap-events.component';
 
-
 const routes: Routes = [
   {
     path: 'prescription',
-    component: DemoPageComponent
+    component: DemoPageComponent,
   },
-   // {
-  //   path: '',
-  //   redirectTo: 'medicinetab',
-  //   pathMatch: 'full',
-
-  // },
+  {
+    path: '',
+    redirectTo: 'medicinetab',
+    pathMatch: 'full',
+  },
   {
     path: 'caregaps',
-    component: CareGapChartComponent
+    component: CareGapChartComponent,
   },
   {
     path: 'lifestyle',
-    component: LifeStyleComponent
+    component: LifeStyleComponent,
   },
   {
     path: 'demo',
-    component: DemoComponent
+    component: DemoComponent,
   },
   {
     path: 'new',
-    component: NewPrescriptionComponent
+    component: NewPrescriptionComponent,
   },
-  // {
-  //   path: 'medicinetab',
-  //   component: MedicineTabComponent
-  // },
+  {
+    path: 'medicinetab',
+    component: MedicineTabComponent,
+  },
   // {
   //   path: '',
   //   pathMatch: 'prefix', //default
   //   redirectTo: 'medicinetab'
   // },
-
-
 
   // {
   //   path: '**',
@@ -63,33 +59,31 @@ const routes: Routes = [
   //   pathMatch: "full",
   // },
   {
-    path: "demo",
+    path: 'demo',
     component: DemoComponent,
   },
   {
-    path: "new",
+    path: 'new',
     component: NewPrescriptionComponent,
   },
   {
-    path: "caregaps-events",
+    path: 'caregaps-events',
     component: CareGapEventsComponent,
   },
   {
-    path: "plans",
+    path: 'plans',
     loadChildren: () =>
-      import("./notes/notes.module").then((m) => m.NotesModule),
+      import('./notes/notes.module').then((m) => m.NotesModule),
   },
   {
-    path: "calendar",
+    path: 'calendar',
     loadChildren: () =>
-      import("./calendar/calendar.module").then((m) => m.CalendarModule),
+      import('./calendar/calendar.module').then((m) => m.CalendarModule),
   },
-
-
 
   {
     path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
   },
 ];
 
@@ -97,4 +91,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

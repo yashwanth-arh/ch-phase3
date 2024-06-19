@@ -1,16 +1,19 @@
-<div>
-  <div class="addNotesHeader">
-    <div
-      style="
-        font-family: Helvetica;
-        font-size: 16px;
-        font-weight: 700;
-        color: #5e7e9b;
-      "
-    >
-      New care plan
+<div id="addEditCarePlan">
+  <div class="stickyHeader">
+    <div class="addNotesHeader">
+      <div
+        style="
+          font-family: Helvetica;
+          font-size: 16px;
+          font-weight: 700;
+          color: #5e7e9b;
+        "
+      >
+        New care plan
+      </div>
+      <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
     </div>
-    <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
+    <hr />
   </div>
   <mat-dialog-content>
     <form [formGroup]="headerForm">
@@ -26,10 +29,27 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-
         <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Validity</mat-label>
+          <input
+            matInput
+            formControlName="validity"
+            [min]="minDate"
+            [matDatepicker]="picker"
+            required
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field
+          class="example-full-width"
+          appearance="outline"
+          *ngIf="isGeneral"
+        >
           <mat-label>Title</mat-label>
-          <input matInput formControlName="title" />
+          <input matInput formControlName="title" required />
         </mat-form-field>
       </div>
     </form>

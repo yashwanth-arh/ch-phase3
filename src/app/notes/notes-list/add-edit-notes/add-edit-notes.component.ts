@@ -8,8 +8,9 @@ import {
 import { FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ShareCareTeamComponent } from './share-care-team/share-care-team.component';
-import { Editor } from 'ngx-editor';
+import { Editor, Toolbar } from 'ngx-editor';
 
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 @Component({
   selector: 'app-add-edit-notes',
   templateUrl: './add-edit-notes.component.html',
@@ -17,7 +18,19 @@ import { Editor } from 'ngx-editor';
   encapsulation: ViewEncapsulation.None,
 })
 export class AddEditNotesComponent implements OnInit, OnDestroy {
-  editor!: Editor;
+  editor: any = Editor;
+  public editor1 = ClassicEditor;
+  public editorConfig = {
+    toolbar: {
+      items: ['bold', 'bulletedList', 'numberedList'],
+      shouldNotGroupWhenFull: true,
+    },
+    language: 'en',
+  };
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['ordered_list', 'bullet_list'],
+  ];
   html!: '';
   isEditable = [true, true, true, true];
   isGeneral: boolean = true;
@@ -53,11 +66,17 @@ export class AddEditNotesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.editor = new Editor();
+    if (this.data?.mode === 'edit') {
+      if (this.data?.noteType === 'Soap Note') {
+        this.headerForm.get('noteType').setValue('SOAP');
+        this.notesType('SOAP');
+      }
+    }
   }
   notesType(e: any) {
-    if (e.value === 'General') {
+    if (e === 'General') {
       this.isGeneral = true;
-    } else if (e.value === 'SOAP') {
+    } else if (e === 'SOAP') {
       this.updateFormControls();
       this.isGeneral = false;
       this.plansFieldNames = ['Subjective', 'Objective', 'Assessment', 'Plan'];
@@ -75,7 +94,7 @@ export class AddEditNotesComponent implements OnInit, OnDestroy {
           'Consent signed.34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rx’d antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic.',
         ],
       });
-    } else if (e.value === 'APSO') {
+    } else if (e === 'APSO') {
       this.updateFormControls();
       this.isGeneral = false;
       this.plansFieldNames = ['Assessment', 'Plan', 'Subjective', 'Objective'];
@@ -113,7 +132,7 @@ export class AddEditNotesComponent implements OnInit, OnDestroy {
           'Consent signed.34mg Lidocaine + 0.017 mg epi Operculectomy # 17, Rx’d antibiotics, CHX 0.12% BID x 10 days, Reappointed for exo # 17 under local anesthetic.'
         )
       );
-    } else if (e.value === 'CAPS') {
+    } else if (e === 'CAPS') {
       this.updateFormControls();
       this.isGeneral = false;
       this.plansFieldNames = [
@@ -178,7 +197,7 @@ export class AddEditNotesComponent implements OnInit, OnDestroy {
         });
     }
   }
-  savePlans(val: any) {
-    console.log(val);
+  savePlans(Plansval: any, GenVal: any) {
+    console.log(Plansval, GenVal);
   }
 }

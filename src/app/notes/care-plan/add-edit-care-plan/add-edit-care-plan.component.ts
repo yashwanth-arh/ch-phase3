@@ -1,32 +1,33 @@
-import { Component, Inject, OnInit, ViewEncapsulation } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
-import { MAT_DIALOG_DATA, MatDialog } from "@angular/material/dialog";
+import { Component, Inject, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: "app-add-edit-care-plan",
-  templateUrl: "./add-edit-care-plan.component.html",
-  styleUrls: ["./add-edit-care-plan.component.scss"],
+  selector: 'app-add-edit-care-plan',
+  templateUrl: './add-edit-care-plan.component.html',
+  styleUrls: ['./add-edit-care-plan.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class AddEditCarePlanComponent implements OnInit {
   isEditable = [true, true, true, true];
   isGeneral: boolean = true;
+  minDate: any = new Date();
   notes = [
-    "General",
-    "Blood pressure care plan",
-    "Blood pressure home care plan",
-    "Cholesterol care plan",
-    "Cholesterol home care plan",
+    'General',
+    'Blood pressure care plan',
+    'Blood pressure home care plan',
+    'Cholesterol care plan',
+    'Cholesterol home care plan',
   ];
   plansFieldNames = [
-    { name: "Assessment", formControlName: "assessment" },
+    { name: 'Assessment', formControlName: 'assessment' },
     {
-      name: "Healthcare Needs and Goals",
-      formControlName: "healthcareNeedsAndGoals",
+      name: 'Healthcare Needs and Goals',
+      formControlName: 'healthcareNeedsAndGoals',
     },
     {
-      name: "Interventions & Treatments",
-      formControlName: "interventionsTreatments",
+      name: 'Interventions & Treatments',
+      formControlName: 'interventionsTreatments',
     },
   ];
   planForms: any;
@@ -40,14 +41,15 @@ export class AddEditCarePlanComponent implements OnInit {
     public dialog: MatDialog
   ) {
     this.headerForm = this.fb.group({
-      noteType: ["General"],
+      noteType: ['General'],
       title: [],
+      validity: [new Date()],
     });
     this.planForms = this.fb.group({
-      Subjective: [""],
-      Objective: [""],
-      Assessment: [""],
-      Plan: [""],
+      Subjective: [''],
+      Objective: [''],
+      Assessment: [''],
+      Plan: [''],
     });
     this.generalForm = this.fb.group({
       generalNote: [],
@@ -58,7 +60,7 @@ export class AddEditCarePlanComponent implements OnInit {
     console.log(this.data);
   }
   notesType(e: any) {
-    if (e.value === "General") {
+    if (e.value === 'General') {
       this.isGeneral = true;
     } else {
       this.updateFormControls();
@@ -74,13 +76,13 @@ export class AddEditCarePlanComponent implements OnInit {
       // }];
       this.planForms = this.fb.group({
         assessment: [
-          "23 year old male w/ a chief complaint of: “my lower left back jaw has been sore for the fast few days” Pt relates history of swelling for past 3 days, asymptomatic previously.",
+          '23 year old male w/ a chief complaint of: “my lower left back jaw has been sore for the fast few days” Pt relates history of swelling for past 3 days, asymptomatic previously.',
         ],
         healthcareNeedsAndGoals: [
-          "No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally.",
+          'No asymmetry, no swelling, patient points to exactly to #17 (FDI #38) for pain extraorally.',
         ],
         interventionsTreatments: [
-          "1.  Asthmatic - exercise induced 16 supraerupted and occluding on opposing gingiva 17 Pericoronitis Smoker",
+          '1.  Asthmatic - exercise induced 16 supraerupted and occluding on opposing gingiva 17 Pericoronitis Smoker',
         ],
       });
     }
