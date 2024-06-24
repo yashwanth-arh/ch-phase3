@@ -1,0 +1,143 @@
+.calendar-container {
+    padding: 20px;
+    background: #F7F7F7;
+    border-radius: 10px;
+    border: 1px solid #EDEDEE;
+
+    .calendar-body {
+        .month-selector {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .active-button {
+                background: #52B204 !important;
+                border-radius: 50% !important;
+                color: #fff !important;
+            }
+
+            .inactive-button {
+                background: lightgray !important;
+                border-radius: 50% !important;
+                color: #424242 !important;
+            }
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+
+            .day {
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .date {
+                text-align: center;
+                padding: 6px;
+                cursor: pointer;
+                height: 30px;
+                width: 65px;
+                border-radius: 15px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 18px;
+
+                &.care-gap {
+                    background-color: #F44336;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 18px;
+                    color: white;
+                }
+
+                &.upcoming-event {
+                    background-color: lightblue;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 18px;
+                    color: #424242;
+                }
+
+                &.selected-date {
+                    border: 2px solid #52B204;
+                    box-shadow: 0 0 5px #52B204;
+                }
+
+                &:empty {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// .calendar-container {
+//     padding: 20px;
+//     background: #F7F7F7;
+//     border-radius: 10px;
+//     border: 1px solid #EDEDEE;
+
+//     .calendar-body {
+//         .month-selector {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//             margin-bottom: 10px;
+
+//             mat-icon {
+//                 background: #52B204;
+//                 border-radius: 50%;
+//                 color: #fff;
+//             }
+//         }
+
+//         .calendar-grid {
+//             display: grid;
+//             grid-template-columns: repeat(7, 1fr);
+//             gap: 5px;
+
+//             .day {
+//                 font-weight: bold;
+//                 text-align: center;
+//             }
+
+//             .date {
+//                 text-align: center;
+//                 padding: 6px;
+//                 cursor: pointer;
+//                 height: 30px;
+//                 width: 65px;
+//                 border-radius: 15px;
+//                 font-size: 16px;
+//                 font-weight: 500;
+//                 line-height: 18px;
+
+//                 &.care-gap {
+//                     background-color: #F44336;
+//                     font-size: 16px;
+//                     font-weight: 500;
+//                     line-height: 18px;
+//                     color: white;
+//                 }
+
+//                 &.upcoming-event {
+//                     background-color: lightblue;
+//                     font-size: 16px;
+//                     font-weight: 500;
+//                     line-height: 18px;
+//                     color: #424242;
+//                 }
+
+//                 &:empty {
+//                     pointer-events: none;
+//                 }
+//             }
+//         }
+//     }
+// }

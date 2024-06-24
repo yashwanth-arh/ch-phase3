@@ -15,12 +15,6 @@ const routes: Routes = [
     path: 'prescription',
     component: DemoPageComponent
   },
-   // {
-  //   path: '',
-  //   redirectTo: 'medicinetab',
-  //   pathMatch: 'full',
-
-  // },
   {
     path: 'caregaps',
     component: CareGapChartComponent
@@ -37,31 +31,6 @@ const routes: Routes = [
     path: 'new',
     component: NewPrescriptionComponent
   },
-  // {
-  //   path: 'medicinetab',
-  //   component: MedicineTabComponent
-  // },
-  // {
-  //   path: '',
-  //   pathMatch: 'prefix', //default
-  //   redirectTo: 'medicinetab'
-  // },
-
-
-
-  // {
-  //   path: '**',
-  //   component: PageNotFoundComponent
-  // },
-  // {
-  //   path: "",
-  //   component: DemoPageComponent,
-  // },
-  // {
-  //   path: "",
-  //   redirectTo: "",
-  //   pathMatch: "full",
-  // },
   {
     path: "demo",
     component: DemoComponent,
@@ -74,16 +43,16 @@ const routes: Routes = [
     path: "caregaps-events",
     component: CareGapEventsComponent,
   },
-  {
-    path: "plans",
-    loadChildren: () =>
-      import("./notes/notes.module").then((m) => m.NotesModule),
-  },
-  {
-    path: "calendar",
-    loadChildren: () =>
-      import("./calendar/calendar.module").then((m) => m.CalendarModule),
-  },
+  // {
+  //   path: "plans",
+  //   loadChildren: () =>
+  //     import("./notes/notes.module").then((m) => m.NotesModule),
+  // },
+  // {
+  //   path: "calendar",
+  //   loadChildren: () =>
+  //     import("./calendar/calendar.module").then((m) => m.CalendarModule),
+  // },
 
 
 

@@ -1,34 +1,12 @@
-<div class="calendar-container">
-  <div class="calendar-header">
-    <h3>Care gaps / Upcoming events</h3>
-  </div>
-  <div class="calendar-body">
-    <div class="calendar">
-      <mat-card>
-        <mat-card-content>
-          <mat-calendar></mat-calendar>
-        </mat-card-content>
-      </mat-card>
+<div style="padding: 20px;width: 75%;">
+  <mat-card class="card-div">
+    <div class="calendar-header">
+      <h3>Care gaps / Upcoming events</h3>
     </div>
-    <div class="event-list">
-      <mat-tab-group>
-        <mat-tab label="Care gaps">
-          <div class="event-items">
-            <div *ngFor="let event of calendarEvents?.events" class="event-item">
-              <p>{{ event.event }}</p>
-              <p>{{ event.date }}</p>
-            </div>
-          </div>
-        </mat-tab>
-        <mat-tab label="Upcoming events">
-          <div class="event-items">
-            <div *ngFor="let event of calendarEvents?.events" class="event-item">
-              <p>{{ event.event }}</p>
-              <p>{{ event.date }}</p>
-            </div>
-          </div>
-        </mat-tab>
-      </mat-tab-group>
+
+    <div class="app-container">
+      <app-calendars style="width: 68%"></app-calendars>
+      <app-event-list></app-event-list>
     </div>
-  </div>
+  </mat-card>
 </div>

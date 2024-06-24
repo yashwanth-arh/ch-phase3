@@ -31,6 +31,8 @@ import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component
 import { NgxEchartsModule } from 'ngx-echarts';
 import { LifeStyleComponent } from './life-style/life-style.component';
 import { CareGapEventsComponent } from './care-gap-events/care-gap-events.component';
+import { CalendarsComponent } from './calendars/calendars.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { CareGapEventsComponent } from './care-gap-events/care-gap-events.compon
     ImageDialogComponent,
     CareGapChartComponent,
     LifeStyleComponent,
-    CareGapEventsComponent
+    CareGapEventsComponent,
+    CalendarsComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,
