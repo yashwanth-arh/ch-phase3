@@ -1,16 +1,19 @@
-<div>
-  <div class="addNotesHeader">
-    <div
-      style="
-        font-family: Helvetica;
-        font-size: 16px;
-        font-weight: 700;
-        color: #5e7e9b;
-      "
-    >
-      New Note
+<div id="addEditNotes">
+  <div class="stickyHeader">
+    <div class="addNotesHeader">
+      <div
+        style="
+          font-family: Helvetica;
+          font-size: 16px;
+          font-weight: 700;
+          color: #5e7e9b;
+        "
+      >
+        New Note
+      </div>
+      <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
     </div>
-    <mat-icon mat-dialog-close class="closeIcon">close</mat-icon>
+    <hr />
   </div>
   <mat-dialog-content>
     <form [formGroup]="headerForm">
@@ -19,7 +22,7 @@
           <mat-label>Notes Type</mat-label>
           <mat-select
             formControlName="noteType"
-            (selectionChange)="notesType($event)"
+            (selectionChange)="notesType($event.value)"
           >
             <mat-option *ngFor="let note of notes" [value]="note">
               {{ note }}
@@ -29,7 +32,7 @@
 
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Title</mat-label>
-          <input matInput formControlName="title" />
+          <input matInput formControlName="title" required />
         </mat-form-field>
       </div>
     </form>
@@ -45,14 +48,22 @@
               rows="16"
             ></textarea>
           </mat-form-field> -->
-          <div class="NgxEditor__Wrapper">
-            <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+          <!-- <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+            </ngx-editor-menu>
             <ngx-editor
               [editor]="editor"
-              [ngModel]="html"
+              formControlName="generalNote"
               [disabled]="false"
               [placeholder]="'Type here...'"
             ></ngx-editor>
+          </div> -->
+          <div class="genaralBlock">
+            <ckeditor
+              [editor]="editor1"
+              [config]="editorConfig"
+              formControlName="generalNote"
+            ></ckeditor>
           </div>
         </div>
       </form>
@@ -60,7 +71,7 @@
         <div *ngFor="let field of plansFieldNames; let i = index">
           <div class="formFieldBlock">
             <label class="titleText">{{ field }}:</label>
-            <mat-form-field appearance="outline">
+            <!-- <mat-form-field appearance="outline">
               <textarea
                 matInput
                 [readonly]="isEditable[i]"
@@ -76,7 +87,22 @@
                 src="/assets/img/Edit Button.png"
                 style="cursor: pointer"
               />
-            </mat-form-field>
+            </mat-form-field> -->
+            <div>
+              <!-- <img
+                matSuffix
+                class="editIcon"
+                (click)="isEditable[i] = !isEditable[i]"
+                *ngIf="isEditable[i]"
+                src="/assets/img/Edit Button.png"
+                style="cursor: pointer"
+              /> -->
+              <ckeditor
+                [editor]="editor1"
+                [formControlName]="getName(field)"
+                [config]="editorConfig"
+              ></ckeditor>
+            </div>
           </div>
         </div>
       </form>
@@ -97,7 +123,11 @@
     <button mat-stroked-button class="cancelBtn" mat-dialog-close>
       Cancel
     </button>
-    <button mat-flat-button class="addBtn" (click)="savePlans(planForms.value)">
+    <button
+      mat-flat-button
+      class="addBtn"
+      (click)="savePlans(planForms.value, generalForm.value)"
+    >
       Save
     </button>
   </mat-dialog-actions>

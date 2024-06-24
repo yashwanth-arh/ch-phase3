@@ -28,6 +28,7 @@ import { ShareCareTeamComponent } from './notes-list/add-edit-notes/share-care-t
 import { AddEditDietPlanComponent } from './diet-plan/add-edit-diet-plan/add-edit-diet-plan.component';
 import { AddEditCarePlanComponent } from './care-plan/add-edit-care-plan/add-edit-care-plan.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { NgxEditorModule } from 'ngx-editor';
     MatCardModule,
     MatCheckboxModule,
     NgxEditorModule,
+    CKEditorModule,
   ],
 })
 export class NotesModule {}

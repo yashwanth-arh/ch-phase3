@@ -9,56 +9,81 @@ import { CareGapChartComponent } from './care-gap-chart/care-gap-chart.component
 import { LifeStyleComponent } from './life-style/life-style.component';
 import { CareGapEventsComponent } from './care-gap-events/care-gap-events.component';
 
-
 const routes: Routes = [
   {
     path: 'prescription',
-    component: DemoPageComponent
+    component: DemoPageComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'medicinetab',
+    pathMatch: 'full',
   },
   {
     path: 'caregaps',
-    component: CareGapChartComponent
+    component: CareGapChartComponent,
   },
   {
     path: 'lifestyle',
-    component: LifeStyleComponent
+    component: LifeStyleComponent,
   },
   {
     path: 'demo',
-    component: DemoComponent
-  },
-  {
-    path: 'new',
-    component: NewPrescriptionComponent
-  },
-  {
-    path: "demo",
     component: DemoComponent,
   },
   {
-    path: "new",
+    path: 'new',
     component: NewPrescriptionComponent,
   },
   {
-    path: "caregaps-events",
-    component: CareGapEventsComponent,
+    path: 'medicinetab',
+    component: MedicineTabComponent,
   },
   // {
-  //   path: "plans",
-  //   loadChildren: () =>
-  //     import("./notes/notes.module").then((m) => m.NotesModule),
+  //   path: '',
+  //   pathMatch: 'prefix', //default
+  //   redirectTo: 'medicinetab'
+  // },
+
+  // {
+  //   path: '**',
+  //   component: PageNotFoundComponent
   // },
   // {
-  //   path: "calendar",
-  //   loadChildren: () =>
-  //     import("./calendar/calendar.module").then((m) => m.CalendarModule),
+  //   path: "",
+  //   component: DemoPageComponent,
   // },
-
-
+  // {
+  //   path: "",
+  //   redirectTo: "",
+  //   pathMatch: "full",
+  // },
+  {
+    path: 'demo',
+    component: DemoComponent,
+  },
+  {
+    path: 'new',
+    component: NewPrescriptionComponent,
+  },
+  {
+    path: 'caregaps-events',
+    component: CareGapEventsComponent,
+  },
+  {
+    path: 'plans',
+    loadChildren: () =>
+      import('./notes/notes.module').then((m) => m.NotesModule),
+  },
+  {
+    path: 'calendar',
+    loadChildren: () =>
+      import('./calendar/calendar.module').then((m) => m.CalendarModule),
+  },
 
   {
     path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
   },
 ];
 
@@ -66,4 +91,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
