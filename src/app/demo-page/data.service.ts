@@ -30,4 +30,7 @@ export class DataService {
   getCalendarEvents(): Observable<any> {
     return this.http.get('assets/calendar-events.json')
   }
+  getEvents(): Observable<any> {
+    return this.http.get<any>('assets/calendar-events.json');
+  }
 }

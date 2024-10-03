@@ -1,0 +1,50 @@
+<div class="calendar-container">
+    <div class="calendar-body">
+        <div class="month-selector">
+            <button mat-icon-button (click)="showPreviousMonth()">
+                <mat-icon [ngClass]="{'active-button': isCurrentMonthDisplayed()}">keyboard_arrow_left</mat-icon>
+            </button>
+            <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+            <button mat-icon-button (click)="showCurrentMonth()">
+                <mat-icon [ngClass]="{'active-button': isPreviousMonthDisplayed()}">keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+        <div class="calendar-grid">
+            <div class="day" *ngFor="let day of days">{{ day }}</div>
+            <div class="date" *ngFor="let date of dates" [ngClass]="{
+             'care-gap': isCareGap(date),
+             'upcoming-event': isUpcomingEvent(date),
+             'selected-date': date === selectedDate
+           }" (click)="selectDate(date)">
+                {{ date !== 0 ? date : '' }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- dont change old one  -->
+
+<!-- <div class="calendar-container">
+    <div class="calendar-body">
+        <div class="month-selector">
+            <button mat-icon-button (click)="showPreviousMonth()">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+            <button mat-icon-button (click)="showNextMonth()">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+        <div class="calendar-grid">
+            <div class="day" *ngFor="let day of days">{{ day }}</div>
+            <div class="date" *ngFor="let date of dates" [ngClass]="{
+          'care-gap': isCareGap(date),
+          'upcoming-event': isUpcomingEvent(date)
+        }" (click)="selectDate(date)">
+                {{ date !== 0 ? date : '' }}
+            </div>
+        </div>
+    </div>
+</div> -->

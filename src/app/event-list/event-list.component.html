@@ -1,0 +1,50 @@
+<div class="event-list-container">
+    <mat-tab-group [(selectedIndex)]="selectedIndex">
+        <mat-tab label="Care gaps">
+            <ul *ngIf="careGaps.length  else noRecordsCareGaps">
+                <li *ngFor="let event of careGaps"><span class="header">{{ event.event }}</span> <br /><span
+                        class="date-div">{{ event.date }}</span></li>
+            </ul>
+            <ng-template #noRecordsCareGaps>
+                <p>No records</p>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Upcoming events">
+            <ul *ngIf="upcomingEvents.length else noRecordsUpcomingEvents">
+                <li *ngFor="let event of upcomingEvents"><span class="header">{{ event.event }}</span> <br /><span
+                        class="date-div">{{ event.date }}</span></li>
+            </ul>
+            <ng-template #noRecordsUpcomingEvents>
+                <p>No records</p>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+
+<!-- <div class="event-list-container">
+    <mat-tab-group [selectedIndex]="selectedTabIndex">
+        <mat-tab label="Care gaps">
+            <ul *ngIf="careGaps.length > 0; else noRecordsCareGaps">
+                <li *ngFor="let event of careGaps">
+                    <span class="header">{{ event.event }}</span> <br />
+                    <span class="date-div">{{ event.date }}</span>
+                </li>
+            </ul>
+            <ng-template #noRecordsCareGaps>
+                <p>No records</p>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Upcoming events">
+            <ul *ngIf="upcomingEvents.length > 0; else noRecordsUpcomingEvents">
+                <li *ngFor="let event of upcomingEvents">
+                    <span class="header">{{ event.event }}</span> <br />
+                    <span class="date-div">{{ event.date }}</span>
+                </li>
+            </ul>
+            <ng-template #noRecordsUpcomingEvents>
+                <p>No records</p>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div> -->
